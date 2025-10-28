@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Wheel</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <img src="assets/peacocks.png" alt="Left Peacock Decoration" class="peacock-side-left">
+    <img src="assets/peacocksf.png" alt="Right Peacock Decoration" class="peacock-side-right">
+
+    <div class="app-container">
+        
+        <header class="app-header">
+            <h1>SPIN THE WHEEL</h1>
+        </header>
+
+        <main class="wheel-area">
+            <div class="wheel-pointer">
+                <svg width="40" height="50" viewBox="0 0 38 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 48L37.3205 24L0.679491 24L19 48Z" fill="url(#pointer-gradient)"/>
+                    <path d="M19.0001 30.0623C20.9854 30.0623 22.5939 28.4538 22.5939 26.4685C22.5939 24.4832 20.9854 22.8748 19.0001 22.8748C17.0148 22.8748 15.4062 24.4832 15.4062 26.4685C15.4062 28.4538 17.0148 30.0623 19.0001 30.0623Z" fill="#FDE089"/>
+                    <path d="M19 0L29.3923 21.75H8.6077L19 0Z" fill="url(#pointer-gradient)"/>
+                    <defs>
+                        <linearGradient id="pointer-gradient" x1="19" y1="0" x2="19" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FDE089"/>
+                            <stop offset="0.5" stop-color="#B07C2A"/>
+                            <stop offset="1" stop-color="#FDE089"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <div id="wheel-container">
+                <img src="assets/wheel-graphic.png" alt="Spinning Wheel" id="wheel-image">
+                
+                <div id="wheel-labels"></div>
+            </div>
+        </main>
+
+        <footer class="app-controls">
+            <button id="spin-button" role="button" aria-label="Spin the wheel">SPIN</button>
+            </footer>
+
+    </div>
+
+    <div id="result-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <h2 id="modal-title">You Won:</h2>
+            <p id="result-text" aria-live="polite"></p>
+            <button id="close-modal-button" aria-label="Close result modal">Close</button>
+        </div>
+    </div>
+
+    <div id="dev-controls" class="dev-controls">
+        <label for="dev-segment-select">Force Result:</label>
+        <select id="dev-segment-select">
+            </select>
+    </div>
+
+</body>
+</html>
